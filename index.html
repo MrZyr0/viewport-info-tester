@@ -9,7 +9,7 @@
     <link rel="shortcut icon" type="image/jpg" href="https://avatars.githubusercontent.com/u/32927775?v=4"/>
   </head>
   <body>
-    <div id="tester-container" class="sticky top-0 left-0 h-screen w-full z-10 flex flex-col items-center justify-center px-4 bg-gray-500 opacity-95 cursor-pointer">
+    <div id="tester-container" class="z-10 flex flex-col items-center justify-center px-4 bg-gray-500 opacity-95 cursor-pointer" isLocked="true">
         <h1 class="font-mono font-bold text-5xl leading-tight text-white text-center text-shadow">Viewport info</h1>
         <div class="mt-10 font-mono font-bold text-xl text-white">
           <p class="px-10 text-shadow">status: <span id="status-label">LOCKED 🔒</span></p>
@@ -32,7 +32,7 @@
         const heightLabel = document.querySelector('#height-label');
         const stateLabel = document.querySelector('#state-label');
 
-        let isLocked = true;
+        let isLocked = mainContainer.getAttribute('state');
 
         function generateRandomColor() {
             var randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
@@ -50,6 +50,7 @@
           mainContainer.style.backgroundColor = generateRandomColor();
 
           isLocked = !isLocked;
+          mainContainer.setAttribute('isLocked', isLocked);
         }
 
         refreshValues();
@@ -59,6 +60,22 @@
     </script>
 
     <style>
+      #tester-container[isLocked="true"] {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+
+      #tester-container[isLocked="false"] {
+        position: sticky;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+      }
+
       .text-shadow {
         text-shadow: 0px 1px 2px rgb(30 29 39 / 19%), 1px 2px 4px rgb(54 64 147 / 18%);
       }

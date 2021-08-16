@@ -49,9 +49,9 @@
           testerContainer.setAttribute('isLocked', isLocked);
 
           if (isLocked) {
-            document.querySelector('body').classList.add('fixed inset-0 overflow-hidden');
+            document.querySelector('body').classList.add('fixed', 'inset-0', 'overflow-hidden');
           } else {
-            document.querySelector('body').classList.remove('fixed inset-0 overflow-hidden');
+            document.querySelector('body').classList.remove('fixed', 'inset-0', 'overflow-hidden');
           }
 
           statusLabel.innerText = isLocked ? 'LOCKED 🔒' : 'Unlocked 🔓';

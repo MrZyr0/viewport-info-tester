@@ -29,11 +29,16 @@
         const widthLabel = document.querySelector('#width-label');
         const heightLabel = document.querySelector('#height-label');
 
+        function generateRandomColor() {
+            var randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+            return randomColor;
+        }
+
         function refreshValues() {
             widthLabel.innerText = `${mainContainer.scrollWidth} px`;
             heightLabel.innerText = `${mainContainer.scrollHeight} px`;
 
-            console.log('Values refreshed');
+            mainContainer.style.backgroundColor = generateRandomColor();
         }
 
         refreshValues();

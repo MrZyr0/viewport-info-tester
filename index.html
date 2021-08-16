@@ -18,6 +18,7 @@
           <p class="mt-10 font-thin italic text-sm text-center text-shadow">Click to refresh values and <span id="state-label">unlock</span> scoll</p>
       </div>
         <p class="absolute bottom-5 font-thin italic text-sm text-center text-gray-200 text-shadow">Developed with heart by <a class="underline" href="http://github.com/MrZyr0/">@MrZyr0</a></p>
+        <p class="absolute bottom-5 font-thin italic text-sm text-center text-gray-200 text-shadow">Version: </p>
     </div>
 
     <p>
@@ -40,12 +41,12 @@
         }
 
         function refreshValues() {
+          document.querySelector('body').style.overflow = isLocked ? 'hidden' : 'visible';
+
           statusLabel.innerText = isLocked ? 'Unlocked 🔓' : 'LOCKED 🔒';
           widthLabel.innerText = `${mainContainer.scrollWidth} px`;
           heightLabel.innerText = `${mainContainer.scrollHeight} px`;
           stateLabel.innerText = isLocked ? 'unlock' : 'lock';
-
-          mainContainer.style.position = isLocked ? 'sticky' : 'fixed';
           
           mainContainer.style.backgroundColor = generateRandomColor();
 

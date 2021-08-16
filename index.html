@@ -41,11 +41,12 @@
 
             mainContainer.style.position = isLocked ? 'sticky' : 'fixed';
             isLocked = !isLocked;
+            console.log('Values refreshed');
         }
 
         refreshValues();
 
-        mainContainer.addEventListener('click', refreshValues());
+        mainContainer.addEventListener('click', refreshValues);
       });
     </script>
   </body>

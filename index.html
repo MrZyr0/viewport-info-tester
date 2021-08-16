@@ -26,18 +26,18 @@
     <script>
         window.addEventListener('load', () => {
         const mainContainer = document.querySelector('#tester-container');
-        let statusLabel = document.querySelector('#status-label');
-        let widthLabel = document.querySelector('#width-label');
-        let heightLabel = document.querySelector('#height-label');
-        let stateLabel = document.querySelector('#state-label');
+        const statusLabel = document.querySelector('#status-label');
+        const widthLabel = document.querySelector('#width-label');
+        const heightLabel = document.querySelector('#height-label');
+        const stateLabel = document.querySelector('#state-label');
 
         let isLocked = true;
 
         function refreshValues() {
             statusLabel.innerText = isLocked ? 'Unlocked 🔓' : 'LOCKED 🔒';
-            widthLabel = `${mainContainer.scrollWidth} px`;
-            heightLabel = `${mainContainer.scrollHeight} px`;
-            stateLabel = isLocked ? 'unlock' : 'lock';
+            widthLabel.innerText = `${mainContainer.scrollWidth} px`;
+            heightLabel.innerText = `${mainContainer.scrollHeight} px`;
+            stateLabel.innerText = isLocked ? 'unlock' : 'lock';
 
             mainContainer.style.position = isLocked ? 'sticky' : 'fixed';
             isLocked = !isLocked;

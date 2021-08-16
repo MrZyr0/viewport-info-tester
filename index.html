@@ -10,7 +10,7 @@
   </head>
   <body>
     <!-- TODO: fix offset on state change -->
-    <div id="tester-container" class="z-10 flex flex-col items-center justify-center px-4 bg-gray-500 opacity-95 cursor-pointer border-4" isLocked="true">
+    <div id="tester-container" class="z-10 flex flex-col items-center justify-center px-4 bg-gray-500 opacity-95 cursor-pointer border-4" isLocked="false">
       <!-- TODO: add animation on REAL text -->
         <h1 class="font-mono font-bold text-5xl leading-tight text-white text-center text-shadow select-none">Real viewport info ✨</h1>
         <div class="mt-10 font-mono font-bold text-xl text-white">
@@ -20,7 +20,7 @@
           <p class="mt-2 px-10 text-shadow select-none">height: <code id="height-label" class="ml-1 select-all" style="cursor: copy;">---</code> px</p>
           <p class="mt-10 font-thin italic text-sm text-center text-shadow select-none">Click to refresh values and <span id="state-label">unlock</span> scoll</p>
       </div>
-        <p class="absolute bottom-5 font-thin italic text-sm text-center text-gray-200 text-shadow select-none">Developed with heart by <a class="underline" href="http://github.com/MrZyr0/">@MrZyr0</a></p>
+        <p class="absolute bottom-5 font-thin italic text-sm text-center text-gray-300 text-shadow select-none">Developed with heart by <a class="underline" href="http://github.com/MrZyr0/">@MrZyr0</a></p>
     </div>
 
     <p class="select-none">
@@ -49,7 +49,7 @@
 
           document.querySelector('body').style.overflow = isLocked ? 'hidden' : 'visible';
 
-          statusLabel.innerText = isLocked ? 'Unlocked 🔓' : 'LOCKED 🔒';
+          statusLabel.innerText = isLocked ? 'LOCKED 🔒' : 'Unlocked 🔓';
           widthLabel.innerText = testerContainer.scrollWidth;
           heightLabel.innerText = testerContainer.scrollHeight;
           stateLabel.innerText = isLocked ? 'unlock' : 'lock';

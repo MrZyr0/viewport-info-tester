@@ -63,7 +63,15 @@
         refreshValues();
 
         window.addEventListener('click', (event) => {
-          if (event.target.id !== testerContainer.id) {
+          if (event.target.id === widthLabel.id || event.target.id === heightLabel.id) {
+            return;
+          }
+
+          refreshValues();
+        });
+
+        window.addEventListener('touchend', (event) => {
+          if (event.target.id === widthLabel.id || event.target.id === heightLabel.id) {
             return;
           }
 

@@ -44,8 +44,9 @@
         }
 
         function refreshValues() {
-          isLocked = !isLocked;
           testerContainer.classList.add('cursor-wait');
+          isLocked = !isLocked;
+          testerContainer.setAttribute('isLocked', isLocked);
 
           if (isLocked) {
             document.querySelector('body').classList.add('fixed inset-0 overflow-hidden');
@@ -60,7 +61,6 @@
           
           testerContainer.style.backgroundColor = generateRandomColor();
 
-          testerContainer.setAttribute('isLocked', isLocked);
           testerContainer.classList.remove('cursor-wait');
         }
 

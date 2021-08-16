@@ -29,13 +29,13 @@
 
     <script>
       window.addEventListener('load', () => {
-        const mainContainer = document.querySelector('#tester-container');
+        const testerContainer = document.querySelector('#tester-container');
         const statusLabel = document.querySelector('#status-label');
         const widthLabel = document.querySelector('#width-label');
         const heightLabel = document.querySelector('#height-label');
         const stateLabel = document.querySelector('#state-label');
 
-        let isLocked = mainContainer.getAttribute('state');
+        let isLocked = testerContainer.getAttribute('state');
 
         // TODO: add constrast check to colors generated
         function generateRandomColor() {
@@ -49,13 +49,13 @@
           document.querySelector('body').style.overflow = isLocked ? 'hidden' : 'visible';
 
           statusLabel.innerText = isLocked ? 'Unlocked 🔓' : 'LOCKED 🔒';
-          widthLabel.innerText = `${mainContainer.scrollWidth} px`;
-          heightLabel.innerText = `${mainContainer.scrollHeight} px`;
+          widthLabel.innerText = `${testerContainer.scrollWidth} px`;
+          heightLabel.innerText = `${testerContainer.scrollHeight} px`;
           stateLabel.innerText = isLocked ? 'unlock' : 'lock';
           
-          mainContainer.style.backgroundColor = generateRandomColor();
+          testerContainer.style.backgroundColor = generateRandomColor();
 
-          mainContainer.setAttribute('isLocked', isLocked);
+          testerContainer.setAttribute('isLocked', isLocked);
         }
 
         refreshValues();

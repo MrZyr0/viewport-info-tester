@@ -14,7 +14,7 @@
             <p class="px-10">status: <span id="status-label">LOCKED 🔒</span></p>
             <p class="mt-2 px-10">width: <span id="width-label" class="ml-4">--- px</span></p>
             <p class="mt-2 px-10">height: <span id="height-label" class="ml-1">--- px</span></p>
-            <p class="mt-10 font-thin italic text-sm text-center">Click to refresh values and <span class="state-label">unlock</span> scoll</p>
+            <p class="mt-10 font-thin italic text-sm text-center">Click to refresh values and <span id="state-label">unlock</span> scoll</p>
         </div>
         <p class="absolute bottom-5 text-gray-200">Developed with heart by <a class="underline" href="http://github.com/MrZyr0/">@MrZyr0</a></p>
     </div>
@@ -24,7 +24,7 @@
     </p>
 
     <script>
-        window.addEventListener('load', () => {
+      window.addEventListener('load', () => {
         const mainContainer = document.querySelector('#tester-container');
         const statusLabel = document.querySelector('#status-label');
         const widthLabel = document.querySelector('#width-label');
@@ -46,7 +46,7 @@
         refreshValues();
 
         mainContainer.addEventListener('click', refreshValues());
-        });
+      });
     </script>
   </body>
 </html>

@@ -47,7 +47,11 @@
           isLocked = !isLocked;
           testerContainer.classList.add('cursor-wait');
 
-          document.querySelector('body').style.overflow = isLocked ? 'hidden' : 'visible';
+          if (isLocked) {
+            document.querySelector('body').classList.add('fixed inset-0 overflow-hidden');
+          } else {
+            document.querySelector('body').classList.remove('fixed inset-0 overflow-hidden');
+          }
 
           statusLabel.innerText = isLocked ? 'LOCKED 🔒' : 'Unlocked 🔓';
           widthLabel.innerText = testerContainer.scrollWidth;
@@ -63,7 +67,6 @@
         refreshValues();
 
         document.querySelector('body').addEventListener('click', (event) => {
-          console.log(event);
           if (event.target.id === widthLabel.id || event.target.id === heightLabel.id) {
             return;
           }

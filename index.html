@@ -50,8 +50,8 @@
           document.querySelector('body').style.overflow = isLocked ? 'hidden' : 'visible';
 
           statusLabel.innerText = isLocked ? 'Unlocked 🔓' : 'LOCKED 🔒';
-          widthLabel.innerText = `${testerContainer.scrollWidth} px`;
-          heightLabel.innerText = `${testerContainer.scrollHeight} px`;
+          widthLabel.innerText = testerContainer.scrollWidth;
+          heightLabel.innerText = testerContainer.scrollHeight;
           stateLabel.innerText = isLocked ? 'unlock' : 'lock';
           
           testerContainer.style.backgroundColor = generateRandomColor();

@@ -41,6 +41,8 @@
         }
 
         function refreshValues() {
+          isLocked = !isLocked;
+
           document.querySelector('body').style.overflow = isLocked ? 'hidden' : 'visible';
 
           statusLabel.innerText = isLocked ? 'Unlocked 🔓' : 'LOCKED 🔒';
@@ -50,7 +52,6 @@
           
           mainContainer.style.backgroundColor = generateRandomColor();
 
-          isLocked = !isLocked;
           mainContainer.setAttribute('isLocked', isLocked);
         }
 

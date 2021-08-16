@@ -10,12 +10,12 @@
   </head>
   <body>
     <div id="tester-container" class="sticky top-0 left-0 h-screen w-full z-10 flex flex-col items-center justify-center px-4 bg-gray-500 opacity-95 cursor-pointer">
-        <h1 class="font-mono font-bold text-5xl leading-tight text-white text-center">Viewport info</h1>
+        <h1 class="font-mono font-bold text-5xl leading-tight text-white text-center text-shadow">Viewport info</h1>
         <div class="mt-10 font-mono font-bold text-xl text-white">
-          <p class="px-10">status: <span id="status-label">LOCKED 🔒</span></p>
-          <p class="mt-2 px-10">width: <span id="width-label" class="ml-4">--- px</span></p>
-          <p class="mt-2 px-10">height: <span id="height-label" class="ml-1">--- px</span></p>
-          <p class="mt-10 font-thin italic text-sm text-center">Click to refresh values and <span id="state-label">unlock</span> scoll</p>
+          <p class="px-10 text-shadow">status: <span id="status-label">LOCKED 🔒</span></p>
+          <p class="mt-2 px-10 text-shadow">width: <span id="width-label" class="ml-4">--- px</span></p>
+          <p class="mt-2 px-10 text-shadow">height: <span id="height-label" class="ml-1">--- px</span></p>
+          <p class="mt-10 font-thin italic text-sm text-center text-shadow">Click to refresh values and <span id="state-label">unlock</span> scoll</p>
       </div>
         <p class="absolute bottom-5 text-gray-200">Developed with heart by <a class="underline" href="http://github.com/MrZyr0/">@MrZyr0</a></p>
     </div>
@@ -48,7 +48,7 @@
           mainContainer.style.position = isLocked ? 'sticky' : 'fixed';
           
           mainContainer.style.backgroundColor = generateRandomColor();
-          
+
           isLocked = !isLocked;
         }
 
@@ -57,5 +57,11 @@
         mainContainer.addEventListener('click', refreshValues);
       });
     </script>
+
+    <style>
+      .text-shadow {
+        text-shadow: 0px 1px 2px rgb(30 29 39 / 19%), 1px 2px 4px rgb(54 64 147 / 18%);
+      }
+    </style>
   </body>
 </html>
